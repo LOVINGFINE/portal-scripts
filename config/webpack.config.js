@@ -507,11 +507,6 @@ module.exports = function (webpackEnv) {
                   modules: {
                     getLocalIdent: getCSSModuleLocalIdent,
                   },
-                  options: {
-                    lessOptions: {
-                      strictMath: true,
-                    },
-                  },
                 },
                 "less-loader"
               ),
@@ -524,11 +519,6 @@ module.exports = function (webpackEnv) {
                   sourceMap: isEnvProduction
                     ? shouldUseSourceMap
                     : isEnvDevelopment,
-                  options: {
-                    lessOptions: {
-                      strictMath: true,
-                    },
-                  },
                 },
                 "less-loader"
               ),

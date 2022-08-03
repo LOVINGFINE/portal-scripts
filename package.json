@@ -1,6 +1,6 @@
 {
   "name": "portal-scripts",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "scripts for react cli",
   "engines": {
     "node": "^10.12.0 || >=12.0.0"
