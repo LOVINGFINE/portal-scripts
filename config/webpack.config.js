@@ -459,6 +459,20 @@ module.exports = function (webpackEnv) {
             },
             {
               test: cssRegex,
+              resourceQuery: /css_modules/,
+              use: getStyleLoaders({
+                importLoaders: 1,
+                sourceMap: isEnvProduction
+                  ? shouldUseSourceMap
+                  : isEnvDevelopment,
+                modules: {
+                  mode: "local",
+                  getLocalIdent: getCSSModuleLocalIdent,
+                },
+              }),
+            },
+            {
+              test: cssRegex,
               use: getStyleLoaders({
                 importLoaders: 1,
                 sourceMap: isEnvProduction
@@ -476,7 +490,10 @@ module.exports = function (webpackEnv) {
                   sourceMap: isEnvProduction
                     ? shouldUseSourceMap
                     : isEnvDevelopment,
-                  modules: true,
+                  modules: {
+                    mode: "local",
+                    getLocalIdent: getCSSModuleLocalIdent,
+                  },
                 },
                 "less-loader"
               ),
