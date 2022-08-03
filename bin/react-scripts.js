@@ -17,20 +17,12 @@ process.on("unhandledRejection", (err) => {
 
 const spawn = require("react-dev-utils/crossSpawn");
 const args = process.argv.slice(2);
-const written = require("../scripts/written");
 const scriptIndex = args.findIndex(
-  (x) =>
-    x === "build" ||
-    x === "start" ||
-    x === "test" ||
-    x.indexOf("written") !== -1
+  (x) => x === "build" || x === "start" || x === "test"
 );
 const script = scriptIndex === -1 ? args[0] : args[scriptIndex];
 const nodeArgs = scriptIndex > 0 ? args.slice(0, scriptIndex) : [];
-if (script.indexOf("written") !== -1) {
-  written(script.split(":")[1]);
-  return;
-}
+
 if (["build", "start", "test"].includes(script)) {
   const result = spawn.sync(
     process.execPath,
