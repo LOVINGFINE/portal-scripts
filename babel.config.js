@@ -1,5 +1,5 @@
 const { extname } = require("path");
-const CSS_FILE_EXTENSIONS = [".css", ".less", ".scss", ".sass"];
+const CSS_FILE_EXTENSIONS = [".css", ".less"];
 const importDeclaration = () => {
   return {
     visitor: {

@@ -468,34 +468,6 @@ module.exports = function (webpackEnv) {
               sideEffects: true,
             },
             {
-              test: sassRegex,
-              resourceQuery: /css_modules/,
-              use: getStyleLoaders(
-                {
-                  importLoaders: 3,
-                  sourceMap: isEnvProduction
-                    ? shouldUseSourceMap
-                    : isEnvDevelopment,
-                  modules: {
-                    getLocalIdent: getCSSModuleLocalIdent,
-                  },
-                },
-                "sass-loader"
-              ),
-            },
-            {
-              test: sassRegex,
-              use: getStyleLoaders(
-                {
-                  importLoaders: 3,
-                  sourceMap: isEnvProduction
-                    ? shouldUseSourceMap
-                    : isEnvDevelopment,
-                },
-                "sass-loader"
-              ),
-            },
-            {
               test: lessRegex,
               resourceQuery: /css_modules/,
               use: getStyleLoaders(
@@ -504,9 +476,7 @@ module.exports = function (webpackEnv) {
                   sourceMap: isEnvProduction
                     ? shouldUseSourceMap
                     : isEnvDevelopment,
-                  modules: {
-                    getLocalIdent: getCSSModuleLocalIdent,
-                  },
+                  modules: true,
                 },
                 "less-loader"
               ),

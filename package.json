@@ -1,6 +1,6 @@
 {
   "name": "portal-scripts",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "scripts for react cli",
   "engines": {
     "node": "^10.12.0 || >=12.0.0"
@@ -42,7 +42,6 @@
     "css-loader": "4.3.0",
     "less": "3.9.0",
     "less-loader": "5.0.0",
-    "sass-loader": "^10.0.5",
     "style-loader": "1.3.0",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
