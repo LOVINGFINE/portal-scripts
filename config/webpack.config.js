@@ -33,7 +33,7 @@ const appPackageJson = require(paths.appPackageJson);
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== "false";
-const public_Path_set = process.env.PUBLIC_PATH;
+const public_Path_set = process.env?.PUBLIC_PATH || "/";
 
 const webpackDevClientEntry = require.resolve(
   "react-dev-utils/webpackHotDevClient"
